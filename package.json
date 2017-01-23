@@ -1,0 +1,20 @@
+{
+  "name": "RasPi-Bitcoin-Ticker",
+  "description": "A simple node.js application that displays current Bitcoin stats to an LCD display via a Raspberry Pi.",
+  "author": "Andrew Schneider",
+  "email": "andrew.mark.schneider@gmail.com",
+  "url": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schnogz/RasPi-Bitcoin-Ticker"
+  },
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "blockchain.info": "2.5.0",
+    "lcd": "1.1.4"
+  }
+}
