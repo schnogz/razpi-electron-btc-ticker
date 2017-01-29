@@ -29,7 +29,7 @@
     "start": "electron main.js "
   },
   "dependencies": {
-    "blockchain.info": "2.5.0",
+    "blockchain.info": "2.6.0",
     "body-parser": "1.16.0",
     "bower": "^1.8.0",
     "chalk": "1.1.3",
