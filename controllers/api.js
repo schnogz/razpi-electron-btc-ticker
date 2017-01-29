@@ -1,3 +1,7 @@
+var btc = require('blockchain.info/exchange');
+
 exports.getStats = (req, res) => {
-  res.send('{ "price": 1000 }');
+  btc.getTicker({ currency: 'USD' }).then(function(resp) {
+    res.send(resp);
+  });
 };

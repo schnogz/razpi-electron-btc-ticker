@@ -12,8 +12,21 @@
         .when('/', {
           templateUrl: 'content.html',
           controllerAs: 'vm',
-          controller: function() {
+          controller: function($http, $interval) {
             var vm = this;
+
+            var getBtcPrice = function() {
+              $http.get('/stats').then(function(response) {
+                vm.price = response.data.last;
+              });
+            };
+
+            getBtcPrice();
+
+            // update price every minute
+            $interval(function() {
+              getBtcPrice();
+            }, 60000)
           }
         })
         .otherwise({redirectTo: '/'});
