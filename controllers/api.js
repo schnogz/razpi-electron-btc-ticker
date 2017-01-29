@@ -1,3 +1,3 @@
-/**
- * Created by Schnogz on 1/28/17.
- */
+exports.getStats = (req, res) => {
+  res.send('{ "price": 1000 }');
+};
