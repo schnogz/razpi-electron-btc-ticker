@@ -9,11 +9,15 @@
 
     function config($routeProvider, $mdThemingProvider){
       $routeProvider
-        .when('/', {
+        .when('/exchange', {
           templateUrl: 'content.html',
           controllerAs: 'vm',
           controller: function($http, $interval) {
             var vm = this;
+
+            vm.stateChange = function(newState) {
+              console.log(newState);
+            };
 
             var getBtcPrice = function() {
               $http.get('/stats').then(function(response) {
@@ -29,7 +33,7 @@
             }, 60000)
           }
         })
-        .otherwise({redirectTo: '/'});
+        .otherwise({redirectTo: '/exchange'});
 
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')

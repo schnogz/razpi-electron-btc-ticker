@@ -1,23 +1,13 @@
-<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="true" md-whiteframe="4">
-  <md-toolbar layout="row" layout-align="center center">
-    <h1 class="md-toolbar-tools">Menu</h1>
-    <md-button class="md-icon-button">
-      <md-icon class="material-icons">menu</md-icon>
-    </md-button>
-  </md-toolbar>
-  <md-content layout-padding>
-    Navigation Items
-    <ul>
-      <li>Price</li>
-      <li>Blocks</li>
-      <li>Halvening Countdown</li>
-    </ul>
-  </md-content>
-</md-sidenav>
-
 <md-content flex>
-  <div layout="column" layout-align="top center">
-    <h1>Current Bitcoin Price</h1>
-    <h1 style="font-size: 50px">${{vm.price}}</h1>
-  </div>
+  <md-tabs md-border-bottom md-no-ink md-swipe-content md-dynamic-height md-stretch-tabs="always">
+    <md-tab label="Exchange Stats" md-on-select="vm.stateChange('exchange')">
+      <md-content layout="row" layout-padding layout-align="">Exchange</md-content>
+    </md-tab>
+    <md-tab label="Transactions" md-on-select="vm.stateChange('transactions')">
+      <md-content layout="row" layout-padding layout-align="">Transactions</md-content>
+    </md-tab>
+    <md-tab label="Halvening Countdown" md-on-select="vm.stateChange('halvening')">
+      <md-content layout="row" layout-padding layout-align="">Halvening</md-content>
+    </md-tab>
+  </md-tabs>
 </md-content>
