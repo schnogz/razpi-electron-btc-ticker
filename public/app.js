@@ -12,12 +12,22 @@
         .when('/exchange', {
           templateUrl: 'content.html',
           controllerAs: 'vm',
-          controller: function($http, $interval) {
+          controller: function($http, $interval, $mdSidenav) {
             var vm = this;
 
-            vm.stateChange = function(newState) {
-              console.log(newState);
-            };
+            vm.menu = [{
+              link: '',
+              title: 'Markets',
+              icon: 'timeline',
+            }, {
+              link: '',
+              title: 'Network',
+              icon: 'language'
+            }, {
+              link: '',
+              title: 'Blocks',
+              icon: 'view_module'
+            }];
 
             var getBtcPrice = function() {
               $http.get('/stats').then(function(response) {
