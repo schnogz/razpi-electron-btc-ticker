@@ -1,41 +1,48 @@
 (function(){
   'use strict';
 
-  angular.module('app', ['ngMaterial', 'ngAnimate', 'ui.router']);
+  angular
+    .module('app', [
+      'ngMaterial',
+      'ngAnimate',
+      'ui.router',
+      'app.markets',
+      'app.blocks',
+      'app.network'
+    ])
+    .config(['$stateProvider', '$mdThemingProvider',
+      function config($stateProvider, $mdThemingProvider) {
+        // configure app states
+        $stateProvider
+          .state({
+            name: 'markets',
+            url: '/markets',
+            controller: 'marketsCtrl',
+            templateUrl: 'js/markets/markets.html'
+          })
+          .state({
+            name: 'network',
+            url: '/network',
+            controller: 'networkCtrl',
+            templateUrl: 'js/network/network.html'
+          })
+          .state({
+            name: 'blocks',
+            url: '/blocks',
+            controller: 'blocksCtrl',
+            templateUrl: 'js/blocks/blocks.html'
+          });
+
+        // configure theme
+        $mdThemingProvider.theme('default')
+          .primaryPalette('teal')
+          .accentPalette('red');
+      }
+    ]);
 
   angular
     .module('app')
-    .config(['$stateProvider', '$mdThemingProvider', config]);
-
-    function config($stateProvider, $mdThemingProvider) {
-      // configure app states
-      $stateProvider
-        .state({
-          name: 'markets',
-          url: '/hello',
-          template: '<h3>MARKETS</h3>'
-        })
-        .state({
-          name: 'network',
-          url: '/network',
-          template: '<h3>NETWORK</h3>'
-        })
-        .state({
-          name: 'blocks',
-          url: '/blocks',
-          template: '<h3>BLOCKS</h3>'
-        });
-
-      // configure theme
-      $mdThemingProvider.theme('default')
-        .primaryPalette('teal')
-        .accentPalette('red');
-    }
-
-  angular
-    .module('app')
-    .controller('main', function ($scope, $http, $interval) {
-
+    .controller('appCtrl', function ($scope) {
       $scope.menu = [{
         state: 'markets',
         title: 'Markets',
@@ -49,20 +56,5 @@
         title: 'Blocks',
         icon: 'view_module'
       }];
-
-      var getBtcPrice = function() {
-        $http.get('/stats').then(function(response) {
-          $scope.price = response.data.last;
-          $scope.lastUpdated = new Date();
-        });
-      };
-
-      getBtcPrice();
-
-      // update price every minute
-      $interval(function() {
-        getBtcPrice();
-      }, 60000)
-
     })
 })();
