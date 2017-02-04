@@ -2,32 +2,27 @@
   <md-toolbar class="md-hue-2" layout-align="center center" layout-padding>
     &#x20BF;itcoin $tatistics
   </md-toolbar>
-  <md-list>
-    <md-item ng-repeat="item in vm.menu">
-      <md-item-content md-ink-ripple layout="row" layout-align="start center">
-        <div class="inset">
-          <md-icon>{{item.icon}}</md-icon>
-        </div>
-        <div class="inset">{{item.title}}</div>
-      </md-item-content>
-    </md-item>
-  </md-list>
+  <ul class="sidenav">
+    <li ng-repeat="item in vm.menu">
+      <md-button ui-sref="item.state" ng-click="">
+        <md-icon>{{item.icon}}</md-icon>
+        <span>{{item.title}}</span>
+      </md-button>
+    </li>
+  </ul>
   <span flex></span>
-  <!--
   <md-switch style="margin: 5px">
     &nbsp; Scroll Pages
   </md-switch>
-  -->
 </md-sidenav>
 
 <div layout="row" class="relative" layout-fill role="main">
   <md-content layout="column" flex md-scroll-y>
     <md-card flex>
-      <md-card-content layout="row" flex>
+      <md-card-content flex layout="row" ui-view>
         Price
       </md-card-content>
-      <span id="last-updated">last updated 5 minutes ago</span>
+      <span id="last-updated">last updated: {{vm.lastUpdated}}</span>
     </md-card>
-
   </md-content>
 </div>

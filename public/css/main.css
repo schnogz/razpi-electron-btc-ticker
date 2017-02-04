@@ -1,3 +1,4 @@
+/* SIDENAV */
 md-sidenav,
 md-sidenav.md-locked-open {
   min-width: 190px !important;
@@ -8,6 +9,32 @@ md-sidenav.md-locked-open {
 md-sidenav md-toolbar {
   min-height: 40px;
 }
+
+.sidenav {
+  margin: 5px 0;
+  padding: 0;
+}
+
+.sidenav ul {
+  padding: 0;
+}
+
+.sidenav md-icon {
+  margin-top: -12px;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+}
+
+.sidenav .md-button {
+  border-radius: 0;
+  line-height: 1em;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  padding: 12px 44px;
+}
+
 
 span#last-updated {
   font-size: 10px;

@@ -7,7 +7,6 @@ module.exports = () => {
   const expressStatusMonitor = require('express-status-monitor');
   const logger = require('morgan');
   const path = require('path');
-  const homeController = require('./controllers/home');
   const apiController = require('./controllers/api');
   const app = express();
 
@@ -21,9 +20,7 @@ module.exports = () => {
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(express.static(path.join(__dirname, 'public')));
 
-
   // endpoint definitions
-  app.get('/', homeController.index);
   app.get('/stats', apiController.getStats);
 
   // error handler

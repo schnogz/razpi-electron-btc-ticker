@@ -1,52 +1,68 @@
 (function(){
   'use strict';
 
-  angular.module('app', ['ngMaterial', 'ngAnimate', 'ngRoute']);
+  angular.module('app', ['ngMaterial', 'ngAnimate', 'ui.router']);
 
   angular
     .module('app')
-    .config(['$routeProvider', '$mdThemingProvider', config]);
+    .config(['$stateProvider', '$mdThemingProvider', config]);
 
-    function config($routeProvider, $mdThemingProvider){
-      $routeProvider
-        .when('/exchange', {
-          templateUrl: 'content.html',
-          controllerAs: 'vm',
-          controller: function($http, $interval, $mdSidenav) {
-            var vm = this;
-
-            vm.menu = [{
-              link: '',
-              title: 'Markets',
-              icon: 'timeline',
-            }, {
-              link: '',
-              title: 'Network',
-              icon: 'language'
-            }, {
-              link: '',
-              title: 'Blocks',
-              icon: 'view_module'
-            }];
-
-            var getBtcPrice = function() {
-              $http.get('/stats').then(function(response) {
-                vm.price = response.data.last;
-              });
-            };
-
-            getBtcPrice();
-
-            // update price every minute
-            $interval(function() {
-              getBtcPrice();
-            }, 60000)
-          }
+    function config($stateProvider, $mdThemingProvider) {
+      // configure app states
+      $stateProvider
+        .state({
+          name: 'markets',
+          url: '/hello',
+          template: '<h3>MARKETS</h3>'
         })
-        .otherwise({redirectTo: '/exchange'});
+        .state({
+          name: 'network',
+          url: '/network',
+          template: '<h3>NETWORK</h3>'
+        })
+        .state({
+          name: 'blocks',
+          url: '/blocks',
+          template: '<h3>BLOCKS</h3>'
+        });
 
+      // configure theme
       $mdThemingProvider.theme('default')
         .primaryPalette('teal')
         .accentPalette('red');
     }
+
+  angular
+    .module('app')
+    .controller('main', function ($scope, $http, $interval) {
+
+      $scope.menu = [{
+        state: 'markets',
+        title: 'Markets',
+        icon: 'timeline',
+      }, {
+        state: 'network',
+        title: 'Network',
+        icon: 'language'
+      }, {
+        state: 'blocks',
+        title: 'Blocks',
+        icon: 'view_module'
+      }];
+
+      var getBtcPrice = function() {
+        $http.get('/stats').then(function(response) {
+          $scope.price = response.data.last;
+          $scope.lastUpdated = new Date();
+        });
+      };
+
+      getBtcPrice();
+
+      // update price every minute
+      $interval(function() {
+        getBtcPrice();
+      }, 60000)
+
+    })
 })();

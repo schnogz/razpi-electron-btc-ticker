@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bitcoin Stats</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="bower_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="bower_modules/angular/angular.js"></script>
+    <script src="bower_modules/angular-animate/angular-animate.js"></script>
+    <script src="bower_modules/angular-aria/angular-aria.js"></script>
+    <script src="bower_modules/angular-material/angular-material.js"></script>
+    <script src="bower_modules/angular-ui-router/release/angular-ui-router.js"></script>
+  </head>
+  <body ng-app="app" layout="row" ng-controller="main">
+    <!-- Sidenav -->
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+      <md-toolbar class="md-hue-2" layout-align="center center" layout-padding>
+        &#x20BF;itcoin $tatistics
+      </md-toolbar>
+      <ul class="sidenav">
+        <li ng-repeat="item in menu">
+          <md-button ui-sref="{{item.state}}" ng-click="">
+            <md-icon>{{item.icon}}</md-icon>
+            <span>{{item.title}}</span>
+          </md-button>
+        </li>
+      </ul>
+      <span flex></span>
+      <md-switch style="margin: 5px">
+        &nbsp; Scroll Pages
+      </md-switch>
+    </md-sidenav>
+
+    <!-- Content -->
+    <div layout="row" class="relative" layout-fill role="main">
+      <md-content layout="column" flex md-scroll-y>
+        <md-card flex>
+          <md-card-content flex layout="row" ui-view>
+          </md-card-content>
+          <span id="last-updated">last updated: {{lastUpdated}}</span>
+        </md-card>
+      </md-content>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

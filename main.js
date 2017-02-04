@@ -12,7 +12,7 @@ function createWindow () {
   // configure window and load app
   //win = new BrowserWindow({fullscreen: true});
   win = new BrowserWindow({width: 1200, height: 1000});
-  win.loadURL('http://localhost:3000/');
+  win.loadURL('http://localhost:3000');
   win.webContents.openDevTools();
   win.on('closed', () => {
     win = null
