@@ -18,7 +18,8 @@
     "angular-aria": "1.5.10",
     "angular-material": "1.1.1",
     "angular-ui-router": "1.0.0-rc.1",
-    "amcharts3": "3.20.20"
+    "amcharts3": "3.20.20",
+    "lodash": "^4.17.4"
   },
   "resolutions": {
     "angular": "1.5.10"

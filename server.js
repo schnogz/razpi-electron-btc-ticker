@@ -21,7 +21,8 @@ module.exports = () => {
   app.use(express.static(path.join(__dirname, 'public')));
 
   // endpoint definitions
-  app.get('/stats', apiController.getStats);
+  app.get('/currentPrice', apiController.getCurrentPrice);
+  app.get('/priceChart', apiController.getHistoricalPriceChart);
 
   // error handler
   app.use(errorHandler());
