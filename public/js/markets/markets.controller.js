@@ -3,6 +3,7 @@ angular
   .controller('marketsCtrl', function ($scope, $http) {
 
     $scope.isLoading = true;
+    $scope.timePeriod = '1D';
 
     $http.get('/priceChart').then(function(resp) {
       // remove last data ppint since it seems to be wildly inaccurate
@@ -27,31 +28,26 @@ angular
         precision: 2,
         processCount: 1005,
         theme: "default",
-        categoryAxis: {
-          gridPosition: "start"
-        },
+        categoryAxis: { gridPosition: "start" },
         chartCursor: {
           limitToGraph: "priceChart",
           enabled: true
         },
-        chartScrollbar: {
-          enabled: true
-        },
+        chartScrollbar: { enabled: true },
         graphs: [{
           balloonText: "$[[value]]",
           valueField: "y" // price
         }],
         guides: [],
         valueAxes: [{
-          id: "ValueAxis-1",
           title: "Price",
           unit: '$',
           unitPosition: 'left'
         }],
         balloon: {},
         titles: [{
-          id: "Title-1",
-          size: 15,
+          size: 18,
+          color: 'rgb(0,105,92)',
           text: "Average Market Price (USD)"
         }],
         dataProvider: chartData

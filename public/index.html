@@ -34,18 +34,15 @@
         </li>
       </ul>
       <span flex></span>
-      <md-switch style="margin: 5px">
-        &nbsp; Scroll Pages
-      </md-switch>
+      <span id="last-updated">last updated: {{lastUpdated}}</span>
     </md-sidenav>
 
     <!-- Content -->
     <div layout="row" class="relative" layout-fill role="main">
       <md-content layout="column" flex md-scroll-y>
         <md-card flex>
-          <md-card-content flex layout="row" ui-view>
+          <md-card-content flex ui-view>
           </md-card-content>
-          <span id="last-updated">last updated: {{lastUpdated}}</span>
         </md-card>
       </md-content>
     </div>
