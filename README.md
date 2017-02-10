@@ -14,4 +14,4 @@ I have written [blog posts](http://theonist.com/build-a-raspberry-pi-bitcoin-tic
 4. `npm start`
 
 ## Screenshot
-![screenshot](https://cloud.githubusercontent.com/assets/6364918/22814755/af2b2314-ef1b-11e6-9ab0-c2c295f076ab.png)
+![screenshot](https://cloud.githubusercontent.com/assets/6364918/22814786/e65c36f2-ef1b-11e6-8790-6a87528fc89a.png)
