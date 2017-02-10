@@ -58,3 +58,11 @@ span#last-updated {
   margin-right: 10px;
   z-index:10;
 }
+
+a.activeNav md-icon {
+  color: #ff5755;
+}
+
+a.activeNav span {
+  color: rgb(0,150,136);
+}

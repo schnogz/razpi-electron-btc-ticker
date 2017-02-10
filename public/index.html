@@ -27,7 +27,7 @@
       </md-toolbar>
       <ul class="sidenav">
         <li ng-repeat="item in menu">
-          <md-button ui-sref="{{item.state}}" ng-click="">
+          <md-button ui-sref="{{item.state}}" ui-sref-active="activeNav">
             <md-icon>{{item.icon}}</md-icon>
             <span>{{item.title}}</span>
           </md-button>
