@@ -9,9 +9,8 @@ exports.getCurrentPrice = (req, res) => {
 };
 
 exports.getHistoricalPriceChart = (req, res) => {
-    // https://blockchain.info/charts/market-price?format=json&timespan=90d
-    stats.getChartData('market-price', { timespan: '90d' })
-      .then((resp) => {
-        res.send(resp);
-    })
+  stats.getChartData('market-price', { timespan: req.query.timespan })
+    .then((resp) => {
+      res.send(resp);
+  })
 };

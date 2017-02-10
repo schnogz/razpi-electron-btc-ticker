@@ -3,19 +3,21 @@ angular
   .controller('marketsCtrl', function ($scope, $http) {
 
     $scope.isLoading = true;
-    $scope.timePeriod = '1D';
+    $scope.timePeriod = '30d';
 
-    $http.get('/priceChart').then(function(resp) {
-      // remove last data ppint since it seems to be wildly inaccurate
-      data = _.dropRight(resp.data, 1);
+    $scope.$watch('timePeriod', function (newVal) {
+      $scope.isLoading = true;
 
-      // convert unix timestamps to JS date object
-      _.each(data, function(point) {
-        point.x = AmCharts.formatDate(new Date(parseInt(point.x)*1000), "M/D/YY");
-      });
+      $http.get('/priceChart?timespan=' + newVal)
+        .then(function(resp) {
+          // convert unix timestamps to JS date object
+          _.each(resp.data, function(point) {
+            point.x = AmCharts.formatDate(new Date(parseInt(point.x)*1000), "M/D/YY");
+          });
 
-      _buiildChart(data);
-      $scope.isLoading = false;
+          _buiildChart(resp.data);
+          $scope.isLoading = false;
+        });
     });
 
     function _buiildChart(chartData) {

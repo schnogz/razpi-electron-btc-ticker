@@ -54,7 +54,7 @@ span#last-updated {
 }
 
 #timePeriodSelect md-select {
-  margin-top: 7px;
+  margin-top: 8px;
   margin-right: 10px;
   z-index:10;
 }
