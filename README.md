@@ -7,17 +7,10 @@ All data is from the [Blockchain.info API](https://blockchain.info/api).
 
 I have written [blog posts](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-1/) that go into detail about the project overall.
 
-## Setup & Development
+## Setup & Local Development
 1. Install Node.js >= v6.9.5. (Using [NVM](https://github.com/creationix/nvm) is recommended)
 2. `npm install`
 3. `bower install`
 4. `npm start`
 
-
-## TODO's
-- JS files 
-  - bundling
-  - minification
-  - linting
-- Live reload (nodemon gulp watch)
-- Electron app compilation/release
+## Screenshot
