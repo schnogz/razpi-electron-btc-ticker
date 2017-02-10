@@ -42,22 +42,4 @@
           .accentPalette('red');
       }
     ]);
-
-  angular
-    .module('app')
-    .controller('appCtrl', function ($scope) {
-      $scope.menu = [{
-        state: 'markets',
-        title: 'Markets',
-        icon: 'timeline'
-      }, {
-        state: 'network',
-        title: 'Network',
-        icon: 'language'
-      }, {
-        state: 'blocks',
-        title: 'Blocks',
-        icon: 'view_module'
-      }];
-    })
 })();

@@ -19,8 +19,8 @@
     <script type="text/javascript" src="bower_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="bower_modules/amcharts-angular/dist/amChartsDirective.js"></script>
   </head>
-  <body ng-app="app" layout="row" ng-controller="appCtrl">
-    <!-- Sidenav -->
+  <body ng-app="app" layout="row" ng-controller="sidenavCtrl">
+
     <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
       <md-toolbar class="md-hue-2" layout-align="center center" layout-padding>
         &#x20BF;itcoin $tatistics
@@ -34,10 +34,9 @@
         </li>
       </ul>
       <span flex></span>
-      <span id="last-updated">last updated: {{lastUpdated}}</span>
+      <h1 class="currentPrice">${{btcPrice}}</h1>
     </md-sidenav>
 
-    <!-- Content -->
     <div layout="row" class="relative" layout-fill role="main">
       <md-content layout="column" flex md-scroll-y>
         <md-card flex>
@@ -48,6 +47,7 @@
     </div>
 
     <script src="js/app.js"></script>
+    <script src="js/layout/sidenav.controller.js"></script>
     <script src="js/markets/markets.controller.js"></script>
     <script src="js/blocks/blocks.controller.js"></script>
     <script src="js/network/network.controller.js"></script>

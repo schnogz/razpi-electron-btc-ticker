@@ -35,12 +35,10 @@ md-sidenav md-toolbar {
   padding: 12px 44px;
 }
 
-span#last-updated {
-  font-size: 10px;
+.currentPrice {
   text-align: center;
-  margin: 0 5px 5px 0;
+  margin: 0 5px 15px 0;
 }
-
 
 /* CHARTS */
 #priceChart {
