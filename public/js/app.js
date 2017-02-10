@@ -45,37 +45,19 @@
 
   angular
     .module('app')
-    .controller('appCtrl', function ($rootScope, $scope) {
+    .controller('appCtrl', function ($scope) {
       $scope.menu = [{
         state: 'markets',
         title: 'Markets',
-        icon: 'timeline',
-        active: true
+        icon: 'timeline'
       }, {
         state: 'network',
         title: 'Network',
-        icon: 'language',
-        active: false
+        icon: 'language'
       }, {
         state: 'blocks',
         title: 'Blocks',
-        icon: 'view_module',
-        active: false
+        icon: 'view_module'
       }];
-
-      $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
-        debugger;
-        if (currentMenuItem) {
-          currentMenuItem.active = true;
-          prevMenuItem = findMenuItem(fromState.name);
-          if (prevMenuItem && prevMenuItem.name !== currentMenuItem.name) {
-            prevMenuItem.active = false;
-          }
-        } else {
-          for (var i = 0; i < currentMenuItem.length; i++) {
-            currentMenuItem[i].active = false;
-          }
-        }
-      });
     })
 })();
