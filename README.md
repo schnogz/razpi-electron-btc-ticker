@@ -13,7 +13,7 @@ I have written [blog posts](http://theonist.com/build-a-raspberry-pi-bitcoin-tic
 3. `bower install`
 4. If you plan to make large amounts of requests to Blockchain.info, request an API 
 code [here](https://blockchain.info/api/create_wallet).
-5. Enter your personal API code in `controllers/apiCode.js` or set it to an empty string.
+5. Enter your personal API code in `controllers/apiCode.js` or set the export value to `null`.
 6. `npm start` to launch the application
 
 ## Screenshot
