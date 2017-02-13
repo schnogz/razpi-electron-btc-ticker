@@ -1,4 +1,5 @@
-const {app, BrowserWindow} = require('electron');
+const { app, BrowserWindow } = require('electron');
+const isDev = require('electron-is-dev');
 
 // keep reference to window object otherwise it will be
 // closed automatically when the JS object is garbage collected.
@@ -10,10 +11,15 @@ function createWindow () {
   app.server = require(__dirname + '/server.js')();
 
   // configure window and load app
-  //win = new BrowserWindow({fullscreen: true});
-  win = new BrowserWindow({width: 1200, height: 1000});
+  if (isDev) {
+    win = new BrowserWindow({width: 1200, height: 1000});
+    win.webContents.openDevTools();
+  } else {
+    win = new BrowserWindow({ fullscreen: true });
+  }
+
   win.loadURL('http://localhost:3000');
-  win.webContents.openDevTools();
+
   win.on('closed', () => {
     win = null
   })
