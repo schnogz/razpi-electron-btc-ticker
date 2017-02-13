@@ -28,7 +28,7 @@
   "scripts": {
     "start": "electron main.js ",
     "pack": "electron-packager . app --platform linux --arch x64 --out dist/ --overwrite",
-    "dist": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
+    "deb-installer": "electron-installer-debian --src dist/app-linux-x64/ --dest dist/installers/ --arch amd64"
   },
   "dependencies": {
     "blockchain.info": "2.6.0",

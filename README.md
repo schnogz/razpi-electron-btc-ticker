@@ -25,7 +25,7 @@ Next run the following commands to package the app and then create the `.deb` in
 
 ```
 npm run pack
-npm run dist
+npm run deb-installer
 ```
 
 ## Screenshot
