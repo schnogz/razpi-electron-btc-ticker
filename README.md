@@ -15,5 +15,18 @@ I have written [blog posts](http://theonist.com/build-a-raspberry-pi-bitcoin-tic
 code [here](https://blockchain.info/api/create_wallet) and enter your personal API code in `controllers/apiCode.js`.
 5. `npm start` to launch the application
 
+## Creating Debian Installer
+It is recommended that you build your packages and installers on your target platform, but if you insist on using 
+Mac OS X, you must first install these tools through Homebrew:
+
+`brew install fakeroot dpkg`
+
+Next run the following commands to package the app and then create the `.deb` installer file:
+
+```
+npm run pack
+npm run dist
+```
+
 ## Screenshot
 ![screenshot](https://cloud.githubusercontent.com/assets/6364918/22814786/e65c36f2-ef1b-11e6-8790-6a87528fc89a.png)
