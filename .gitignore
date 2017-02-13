@@ -4,3 +4,5 @@ node_modules
 .gitignore
 .idea/
 public/bower_modules
+dist
+.DS_Store
