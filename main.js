@@ -12,7 +12,10 @@ function createWindow () {
 
   // configure window and load app
   if (isDev) {
-    win = new BrowserWindow({width: 1200, height: 1000});
+    win = new BrowserWindow({
+      width: 1200,
+      height: 1000
+    });
     win.webContents.openDevTools();
   } else {
     win = new BrowserWindow({ fullscreen: true });
