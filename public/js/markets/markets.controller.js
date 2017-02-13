@@ -15,12 +15,12 @@ angular
             point.x = AmCharts.formatDate(new Date(parseInt(point.x)*1000), "M/D/YY");
           });
 
-          _buiildChart(resp.data);
+          _buildChart(resp.data);
           $scope.isLoading = false;
         });
     });
 
-    function _buiildChart(chartData) {
+    function _buildChart(chartData) {
       AmCharts.makeChart("priceChart", {
         type: "serial",
         categoryField: "x", // date
