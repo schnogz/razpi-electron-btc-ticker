@@ -8,7 +8,7 @@ All data is from the [Blockchain.info API](https://blockchain.info/api).
 You can find detailed information about this project via my blog posts below.
 - [Part 1](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-1/) - Setting up the Raspberry Pi
 - [Part 2](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-2/) - Electron overview & server side code
-- [Part 3](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-3/) - Front end code & autostart guide
+- [Part 3](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-3/) - Frontend code & autostart guide
 
 ## Setup & Local Development
 1. Install Node.js >= v6.9.5. (Using [NVM](https://github.com/creationix/nvm) is recommended)
