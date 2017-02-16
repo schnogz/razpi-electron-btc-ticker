@@ -7,14 +7,14 @@ All data is from the [Blockchain.info API](https://blockchain.info/api).
 
 You can find detailed information about this project via my blog posts below.
 - [Part 1](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-1/) - Setting up the Raspberry Pi
-- [Part 2](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-2/) - Electron overview & server side code
-- [Part 3](http://theonist.com/build-a-raspberry-pi-bitcoin-ticker-part-3/) - Frontend code & autostart guide
+- [Part 2](http://theonist.com/build-a-raspberry-pi-bitcoin-hub-part-2/) - Electron overview & server side code
+- [Part 3](http://theonist.com/build-a-raspberry-pi-bitcoin-hub-part-3/) - Frontend code & autostart guide
 
 ## Setup & Local Development
 1. Install Node.js >= v6.9.5. (Using [NVM](https://github.com/creationix/nvm) is recommended)
 2. `npm install`
 3. `bower install`
-4. `npm start` to launch the application in development mode
+4. `npm start` to launch the application in development mode with Chromium's developer tools opened
 
 **NOTE**:  If you plan to make large amounts of requests to Blockchain.info, request an API
 code [here](https://blockchain.info/api/create_wallet) and enter your personal API code in `controllers/apiCode.js`
