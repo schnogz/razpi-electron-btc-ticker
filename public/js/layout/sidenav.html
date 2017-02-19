@@ -26,9 +26,12 @@
       <td ng-class="{
         'priceUp': stats.symbols.BTCUSD.last < stats.symbols.BTCUSD.ask,
         'priceDown': stats.symbols.BTCUSD.last > stats.symbols.BTCUSD.ask }" md-cell>
-        ${{stats.symbols.BTCUSD.last}}
+        <span ng-if="stats.symbols">${{stats.symbols.BTCUSD.last}}</span>
+        <span ng-if="!stats.symbols">N/A</span>
       </td>
-      <td md-cell>{{stats.symbols.BTCUSD.volume}}</td>
+      <td md-cell>
+        <span ng-if="stats.symbols">${{stats.symbols.BTCUSD.volume}}</span>
+        <span ng-if="!stats.symbols">N/A</span>
     </tr>
     </tbody>
   </table>
