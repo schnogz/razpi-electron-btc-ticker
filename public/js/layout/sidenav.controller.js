@@ -18,14 +18,22 @@ angular
     var getBtcPrice = function() {
       $http.get('/exchangePrices')
         .then(function(response) {
-          $scope.btcPrice = response.data.last;
+          // pull only the exchanges we care about and sort by name
+          $scope.exchanges = _.sortBy(_.filter(response.data, function(e) {
+            return e.name === 'bitstamp' || e.name === 'bitfinex' || e.name === 'gdax' || e.name === 'gemini';
+          }), function(exchanges) {
+            return exchanges.name
+          });
+
+          $scope.lastUpdated = 'now';
         });
     };
 
     getBtcPrice();
 
-    // update price every minute
+    // update prices every minute
     $interval(function() {
+      $scope.previous = angular.copy($scope.exchanges);
       getBtcPrice();
     }, 60000)
 });

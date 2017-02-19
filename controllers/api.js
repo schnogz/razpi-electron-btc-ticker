@@ -3,14 +3,16 @@ var request = require('request');
 var stats = require('blockchain.info/statistics');
 var apiCode = require('./apiCode');
 
-// fetches current BTC price across mulitple exchanges
+// fetches current BTC price across multiple exchanges
 exports.getExchangePrices = (req, res) => {
-
   request({
     url: 'https://apiv2.bitcoinaverage.com/exchanges/all',
     headers: { 'X-testing': 'testing' }
   }, function(error, response, body) {
-    res.send(JSON.parse(body))
+    if (!error && response.statusCode == 200) {
+      res.send(JSON.parse(body));
+    }
+    res.send(response);
   });
 };
 

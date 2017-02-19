@@ -10,4 +10,26 @@
   </li>
 </ul>
 <span flex></span>
-<h1 class="currentPrice">${{btcPrice}}</h1>
+
+<md-table-container>
+  <table md-table id="test">
+    <thead md-head>
+    <tr md-row>
+      <th md-column>Exchange</th>
+      <th md-column md-numeric>Price</th>
+      <th md-column md-numeric>Volume</th>
+    </tr>
+    </thead>
+    <tbody md-body>
+    <tr md-row ng-repeat="stats in exchanges">
+      <td md-cell>{{stats.display_name}}</td>
+      <td md-cell>${{stats.symbols.BTCUSD.last}}</td>
+      <td md-cell>{{stats.symbols.BTCUSD.volume}}</td>
+    </tr>
+    </tbody>
+  </table>
+</md-table-container>
+<span id="lastUpdated">
+  Last updated: {{lastUpdated}}
+</span>
+

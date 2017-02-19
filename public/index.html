@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
     <link rel="stylesheet" href="bower_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_modules/angular-material-data-table/dist/md-data-table.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="bower_modules/lodash/lodash.js"></script>
@@ -18,10 +19,17 @@
     <script type="text/javascript" src="bower_modules/angular-material/angular-material.js"></script>
     <script type="text/javascript" src="bower_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="bower_modules/amcharts-angular/dist/amChartsDirective.js"></script>
+    <script type="text/javascript" src="bower_modules/angular-material-data-table/dist/md-data-table.js"></script>
+
   </head>
   <body ng-app="app" layout="row" ng-controller="sidenavCtrl">
 
-    <md-sidenav ng-include src="'js/layout/sidenav.html'" layout="column" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true">
+    <md-sidenav
+      ng-include
+      src="'js/layout/sidenav.html'"
+      layout="column"
+      class="md-sidenav-left md-whiteframe-z2"
+      md-is-locked-open="true">
     </md-sidenav>
 
     <div layout="row" class="relative" layout-fill role="main">

@@ -1,9 +1,9 @@
 /* SIDENAV */
 md-sidenav,
 md-sidenav.md-locked-open {
-  min-width: 190px !important;
-  width: 190px !important;
-  max-width: 190px !important;
+  min-width: 250px !important;
+  width: 250px !important;
+  max-width: 250px !important;
 }
 
 md-sidenav md-toolbar {
@@ -35,9 +35,25 @@ md-sidenav md-toolbar {
   padding: 12px 44px;
 }
 
-.currentPrice {
+#lastUpdated {
   text-align: center;
-  margin: 0 5px 15px 0;
+  margin: 6px;
+  font-size: 10px;
+}
+
+/* MD-DATA-TABLE */
+table.md-table thead.md-head > tr.md-row {
+  height: 25px;
+}
+table.md-table tbody.md-body > tr.md-row, table.md-table tfoot.md-foot > tr.md-row {
+  height: 35px;
+}
+
+table.md-table#test td.md-cell, table.md-table#test th.md-column {
+  padding:0 10px;
+}
+table.md-table td.md-cell.md-numeric, table.md-table th.md-column.md-numeric {
+  text-align: center;
 }
 
 /* CHARTS */

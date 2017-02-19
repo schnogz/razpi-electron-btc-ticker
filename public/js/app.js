@@ -6,6 +6,7 @@
       'ngMaterial',
       'ngAnimate',
       'ui.router',
+      'md.data.table',
       'app.markets',
       'app.blocks',
       'app.network'
