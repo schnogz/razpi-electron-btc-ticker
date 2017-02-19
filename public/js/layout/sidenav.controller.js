@@ -15,7 +15,7 @@ angular
       icon: 'view_module'
     }];
 
-    var getBtcPrice = function() {
+    $scope.getBtcPrice = function() {
       $http.get('/exchangePrices')
         .then(function(response) {
           // pull only the exchanges we care about and sort by name
@@ -25,15 +25,14 @@ angular
             return exchanges.name
           });
 
-          $scope.lastUpdated = 'now';
+          $scope.lastUpdated = window.moment().format('h:mm A');
         });
     };
 
-    getBtcPrice();
+    $scope.getBtcPrice();
 
-    // update prices every minute
+    // update prices every 30 minutes
     $interval(function() {
-      $scope.previous = angular.copy($scope.exchanges);
-      getBtcPrice();
-    }, 60000)
+      $scope.getBtcPrice();
+    }, 300000)
 });

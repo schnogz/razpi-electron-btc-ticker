@@ -36,9 +36,25 @@ md-sidenav md-toolbar {
 }
 
 #lastUpdated {
-  text-align: center;
-  margin: 6px;
-  font-size: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+#lastUpdated button {
+  height: 20px
+}
+
+#lastUpdated button md-icon {
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+table.md-table tr.md-row > td.priceDown {
+  color: red;
+}
+
+table.md-table tr.md-row > td.priceUp {
+  color: #0ea409;
 }
 
 /* MD-DATA-TABLE */
@@ -52,7 +68,12 @@ table.md-table tbody.md-body > tr.md-row, table.md-table tfoot.md-foot > tr.md-r
 table.md-table#test td.md-cell, table.md-table#test th.md-column {
   padding:0 10px;
 }
+
 table.md-table td.md-cell.md-numeric, table.md-table th.md-column.md-numeric {
+  text-align: center;
+}
+
+table.md-table td.md-cell.md-numeric, table.md-table th.md-column.md-numeric  {
   text-align: center;
 }
 

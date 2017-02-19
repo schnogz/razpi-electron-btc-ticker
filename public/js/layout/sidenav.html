@@ -23,13 +23,22 @@
     <tbody md-body>
     <tr md-row ng-repeat="stats in exchanges">
       <td md-cell>{{stats.display_name}}</td>
-      <td md-cell>${{stats.symbols.BTCUSD.last}}</td>
+      <td ng-class="{
+        'priceUp': stats.symbols.BTCUSD.last < stats.symbols.BTCUSD.ask,
+        'priceDown': stats.symbols.BTCUSD.last > stats.symbols.BTCUSD.ask }" md-cell>
+        ${{stats.symbols.BTCUSD.last}}
+      </td>
       <td md-cell>{{stats.symbols.BTCUSD.volume}}</td>
     </tr>
     </tbody>
   </table>
 </md-table-container>
-<span id="lastUpdated">
-  Last updated: {{lastUpdated}}
-</span>
+<div id="lastUpdated" layout="row" layout-align="space-around center">
+  <div>
+    Last Updated: {{lastUpdated}}
+  </div>
+  <md-button class="md-icon-button" aria-label="Refresh" ng-click="getBtcPrice()">
+    <md-icon>refresh</md-icon>
+  </md-button>
+</div>
 

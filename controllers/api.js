@@ -11,8 +11,9 @@ exports.getExchangePrices = (req, res) => {
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(JSON.parse(body));
+    } else {
+      res.send(response);
     }
-    res.send(response);
   });
 };
 
