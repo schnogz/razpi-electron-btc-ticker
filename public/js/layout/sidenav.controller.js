@@ -31,8 +31,8 @@ angular
 
     $scope.getBtcPrice();
 
-    // update prices every 30 minutes
+    // update prices every 20 minutes
     $interval(function() {
       $scope.getBtcPrice();
-    }, 300000)
+    }, 200000)
 });
