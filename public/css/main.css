@@ -53,7 +53,7 @@ md-sidenav md-toolbar {
 
 #timePeriodSelect md-select {
   margin-top: 8px;
-  margin-right: 10px;
+  margin-right: 2px;
   z-index:10;
 }
 

@@ -16,7 +16,7 @@ angular
     }];
 
     var getBtcPrice = function() {
-      $http.get('/currentPrice')
+      $http.get('/exchangePrices')
         .then(function(response) {
           $scope.btcPrice = response.data.last;
         });

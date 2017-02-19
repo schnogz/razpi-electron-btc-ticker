@@ -1,0 +1,13 @@
+<md-toolbar class="md-hue-2" layout-align="center center" layout-padding>
+  Bitcoin Statistics
+</md-toolbar>
+<ul class="sidenav">
+  <li ng-repeat="item in menu">
+    <md-button ui-sref="{{item.state}}" ui-sref-active="activeNav">
+      <md-icon>{{item.icon}}</md-icon>
+      <span>{{item.title}}</span>
+    </md-button>
+  </li>
+</ul>
+<span flex></span>
+<h1 class="currentPrice">${{btcPrice}}</h1>

@@ -1,15 +1,17 @@
 // dependencies
-var btc = require('blockchain.info/exchange');
+var request = require('request');
 var stats = require('blockchain.info/statistics');
 var apiCode = require('./apiCode');
 
-// fetches current BTC price in USD
-// example request ==> https://api.blockchain.info/ticker
-exports.getCurrentPrice = (req, res) => {
-  btc.getTicker({ currency: 'USD', apiCode: apiCode ? apiCode : null })
-    .then((resp) => {
-      res.send(resp);
-    });
+// fetches current BTC price across mulitple exchanges
+exports.getExchangePrices = (req, res) => {
+
+  request({
+    url: 'https://apiv2.bitcoinaverage.com/exchanges/all',
+    headers: { 'X-testing': 'testing' }
+  }, function(error, response, body) {
+    res.send(JSON.parse(body))
+  });
 };
 
 // fetches historical BTC with given timespan
