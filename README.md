@@ -47,4 +47,4 @@ If you wish instead to autostart this app during the Pi's startup follow these s
 8. Restart your Pi and the app should now automatically start
 
 ## Application Screenshot
-![screenshot](https://cloud.githubusercontent.com/assets/6364918/22814786/e65c36f2-ef1b-11e6-8790-6a87528fc89a.png)
+![screenshot](https://cloud.githubusercontent.com/assets/6364918/23106313/0fc85ab0-f6b1-11e6-850f-0c27e75b044c.png)
