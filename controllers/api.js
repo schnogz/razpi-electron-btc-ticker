@@ -1,6 +1,7 @@
 // dependencies
 const request = require('request');
 const stats = require('blockchain.info/statistics');
+const blockexplorer = require('blockchain.info/blockexplorer');
 const apiCode = require('./apiCode');
 
 
@@ -27,4 +28,13 @@ exports.getHistoricalPriceChart = (req, res) => {
     .then((resp) => {
       res.send(resp);
   })
+};
+
+// fetches latest blocks
+// TODO: fetch full data for each block
+exports.getLatestBlocks = (req, res) => {
+  blockexplorer.getBlocks('', { apiCode: apiCode ? apiCode : null })
+    .then((resp) => {
+      res.send(resp);
+    })
 };

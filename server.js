@@ -23,6 +23,7 @@ module.exports = () => {
   // endpoint definitions
   app.get('/exchangePrices', apiController.getExchangePrices);
   app.get('/priceChart', apiController.getHistoricalPriceChart);
+  app.get('/latestBlocks', apiController.getLatestBlocks);
 
   // error handler
   app.use(errorHandler());
