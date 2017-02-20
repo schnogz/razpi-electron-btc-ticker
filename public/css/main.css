@@ -65,7 +65,7 @@ table.md-table tbody.md-body > tr.md-row, table.md-table tfoot.md-foot > tr.md-r
   height: 35px;
 }
 
-table.md-table#test td.md-cell, table.md-table#test th.md-column {
+table.md-table#sidebarTable td.md-cell, table.md-table#sidebarTable th.md-column {
   padding:0 10px;
 }
 

@@ -1,7 +1,8 @@
 // dependencies
-var request = require('request');
-var stats = require('blockchain.info/statistics');
-var apiCode = require('./apiCode');
+const request = require('request');
+const stats = require('blockchain.info/statistics');
+const apiCode = require('./apiCode');
+
 
 // fetches current BTC price across multiple exchanges
 // using X-testing header allows for 100 requests per 24 hours

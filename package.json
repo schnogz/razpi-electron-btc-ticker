@@ -38,7 +38,8 @@
     "express": "4.14.1",
     "express-status-monitor": "0.1.9",
     "morgan": "1.7.0",
-    "request": "^2.79.0"
+    "request": "^2.79.0",
+    "socket.io": "^1.7.3"
   },
   "devDependencies": {
     "electron-prebuilt": "1.4.13"
