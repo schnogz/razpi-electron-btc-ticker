@@ -1,11 +1,20 @@
 angular
   .module('app.network', [])
-  .controller('networkCtrl', function ($scope) {
+  .controller('networkCtrl', function ($scope, $http, $interval) {
+
+    $scope.transactions = [];
 
     // create websocket connection
     var socket = window.io.connect('http://localhost:3001');
 
-    $scope.transactions = [];
+    var getUnconfirmedTransactions = function() {
+      $http.get('/unconfirmedTransactions')
+        .then(function(resp) {
+          $scope.unconfirmedTransactions = resp.data.unconfirmed_txs;
+        });
+    };
+
+    getUnconfirmedTransactions();
 
     //
     // Socket events
@@ -16,9 +25,14 @@ angular
       $scope.$apply();
     });
 
-    // close socket connection on page leave
+    // update unconfirmed count every 15 seconds
+    var tnxsInterval = $interval(function() {
+      getUnconfirmedTransactions();
+    }, 15000);
+
+    // stop interval calls and close socket connection on page leave
     $scope.$on('$destroy', function() {
-      console.log('socket disconnected');
       socket.disconnect();
+      $interval.cancel(tnxsInterval);
     });
 });

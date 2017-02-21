@@ -30,7 +30,7 @@
           <span ng-if="!stats.symbols">N/A</span>
         </td>
         <td md-cell>
-          <span ng-if="stats.symbols">${{stats.symbols.BTCUSD.volume}}</span>
+          <span ng-if="stats.symbols">{{stats.symbols.BTCUSD.volume}}</span>
           <span ng-if="!stats.symbols">N/A</span>
       </tr>
     </tbody>

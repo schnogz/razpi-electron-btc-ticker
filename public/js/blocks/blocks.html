@@ -1,18 +1,21 @@
-<md-table-container>
-  <table md-table>
-    <thead md-head>
-      <tr md-row>
-        <th md-column>Height</th>
-        <th md-column>Time</th>
-        <th md-column>Hash</th>
-      </tr>
-    </thead>
-    <tbody md-body>
-      <tr md-row ng-repeat="block in blocks">
-        <td md-cell>{{block.height}}</td>
-        <td md-cell>{{block.time}}</td>
-        <td md-cell>{{block.hash}}</td>
-      </tr>
-    </tbody>
-  </table>
-</md-table-container>
+<md-whiteframe class="md-whiteframe-2dp" layout layout-align="center center">
+  <h3>Latest Block</h3>
+  <md-table-container>
+    <table md-table>
+      <thead md-head>
+        <tr md-row>
+          <th md-column>Height</th>
+          <th md-column>Time</th>
+          <th md-column>Hash</th>
+        </tr>
+      </thead>
+      <tbody md-body>
+        <tr md-row ng-repeat="block in blocks">
+          <td md-cell>{{block.height}}</td>
+          <td md-cell>{{block.time}}</td>
+          <td md-cell>{{block.hash}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+</md-whiteframe>

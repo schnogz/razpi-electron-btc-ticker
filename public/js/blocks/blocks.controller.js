@@ -7,24 +7,19 @@ angular
     // create websocket connection
     var socket = window.io.connect('http://localhost:3001');
 
-    // fetch historical blocks
-    $http.get('/latestBlocks')
-      .then(function(response) {
+    // fetch latest block
+    $http.get('/latestBlock')
+      .then(function(resp) {
         // get last 10 blocks and format timestamps
-        $scope.blocks = _.each(_.slice(response.data.blocks, 0, 10), function(block) {
-          var timestamp = new Date(0);
-          timestamp.setUTCSeconds(block.time);
-          block.time = moment(timestamp).format('h:mm:ss A');
-        });
+        $scope.latestBlock = resp.data;
       });
 
     socket.on('newBlock', function(data) {
-      console.info(data)
+      console.info('NEW BLOCK' + data);
     });
 
     // close socket connection on page leave
     $scope.$on('$destroy', function() {
-      console.log('socket disconnected');
       socket.disconnect();
     });
 });
