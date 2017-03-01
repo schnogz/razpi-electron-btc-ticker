@@ -5,14 +5,15 @@ angular
     $scope.isLoading = true;
     $scope.timePeriod = '30d';
 
+    // watch for user changes to timePeriod dropdown
     $scope.$watch('timePeriod', function (newVal) {
       $scope.isLoading = true;
 
       $http.get('/priceChart?timespan=' + newVal)
         .then(function(resp) {
-          // convert unix timestamps to JS date object
+          // convert unix timestamps to JS date objects
           _.each(resp.data, function(point) {
-            point.x = AmCharts.formatDate(new Date(parseInt(point.x)*1000), "M/D/YY");
+            point.x = AmCharts.formatDate(new Date(parseInt(point.x) * 1000), "M/D/YY");
           });
 
           _buildChart(resp.data);
@@ -21,6 +22,7 @@ angular
     });
 
     function _buildChart(chartData) {
+      // configuration for AmChart
       AmCharts.makeChart("priceChart", {
         type: "serial",
         categoryField: "x", // date
