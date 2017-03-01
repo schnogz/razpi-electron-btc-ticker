@@ -23,27 +23,32 @@ code [here](https://blockchain.info/api/create_wallet) and enter your personal A
 It is currently not possible, or at least easy, to create an electron installer targeted for Linux ARM.
 See this electron-builder [issue](https://github.com/electron-userland/electron-builder/issues/778) for more information.
 
-If you wish instead to autostart this app during the Pi's startup follow these steps:
-1. Clone this repo to your Pi
-2. Run `npm install && bower install`
-3. Modify line 5 of `btc-autostart.sh` to cd into the root directory of your cloned app
+If you wish instead to autostart this app during the Pi's startup follow these steps.
+
+1. Clone this repo to your Pi 
+2. Run `npm install && bower install` 
+3. Modify line 5 of `btc-autostart.sh` to cd into the root directory of your cloned app 
 4. As root run the following commands to make the `btc-autostart.sh` executable
-```
-  sudo chown pi:pi /path/to/btc-autostart.sh
-  sudo chmod +x /path/to/btc-autostart.sh
-```
+
+  ```
+    sudo chown pi:pi /path/to/btc-autostart.sh
+    sudo chmod +x /path/to/btc-autostart.sh
+  ``` 
 5. Edit your Pi's LXDE `autostart.sh` file to run this applications `btc-autostart.sh` file
-```
-  sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart.sh
-```
+
+  ```
+    sudo nano /home/pi/.config/lxsession/LXDE-pi/autostart.sh
+  ``` 
 6. At the end of this file add a line pointing to this applications `btc-autostart.sh` file
-```
-  /path/to/btx-autostart.sh
-```
+
+  ```
+    /path/to/btx-autostart.sh
+  ``` 
 7. Save and exit the file
-```
-  Ctrl + X, Y, Enter
-``` 
+
+  ```
+    Ctrl + X, Y, Enter
+  ``` 
 8. Restart your Pi and the app should now automatically start
 
 ## Application Screenshot
