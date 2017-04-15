@@ -20,7 +20,7 @@ angular
         .then(function(response) {
           // pull only the exchanges we care about and sort by name
           $scope.exchanges = _.sortBy(_.filter(response.data, function(e) {
-            return e.name === 'bitstamp' || e.name === 'bitfinex' || e.name === 'gdax' || e.name === 'gemini';
+            return e.name === 'bitstamp' || e.name === 'bitfinex' || e.name === 'kraken' || e.name === 'gemini';
           }), function(exchanges) {
             return exchanges.name
           });
