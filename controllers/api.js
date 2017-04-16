@@ -24,7 +24,7 @@ module.exports = {
   // example timespan's ==> '14d' (14 days), '90d' (90 days), '1y' (1 year), 'all' (all time)
   // example request ==> https://api.blockchain.info/charts/market-price?timespan=1y
   getBlockchainChartInfo: (req, res) => {
-    stats.getChartData('market-price', { timespan: req.query.timespan, apiCode: apiCode ? apiCode : null })
+    stats.getChartData(req.query.chartType, { timespan: req.query.timespan, apiCode: apiCode ? apiCode : null })
       .then((resp) => {
         res.send(resp);
       })

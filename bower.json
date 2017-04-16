@@ -2,7 +2,7 @@
   "name": "razpi-electron-btc-ticker",
   "description": "Electron app built with Angular Material optimized for a Raspberry Pi that displays current stats about Bitcoin (BTC)",
   "license": "MIT",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "Andrew Schneider",
     "email": "andrew.mark.schneider@gmail.com",

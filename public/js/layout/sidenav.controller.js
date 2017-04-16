@@ -3,11 +3,11 @@ angular
   .controller('sidenavCtrl', function ($scope, $http, $interval) {
     $scope.menu = [{
       state: 'markets',
-      title: 'Markets',
+      title: 'Price Chart',
       icon: 'timeline'
     }, {
       state: 'network',
-      title: 'Network',
+      title: 'Network Stats',
       icon: 'language'
     }, {
       state: 'blocks',

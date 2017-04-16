@@ -9,7 +9,8 @@
       'md.data.table',
       'app.markets',
       'app.blocks',
-      'app.network'
+      'app.network',
+      'app.shared'
     ])
     .config(['$stateProvider', '$urlRouterProvider', '$mdThemingProvider',
       function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
