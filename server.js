@@ -22,7 +22,7 @@ module.exports = () => {
 
   // endpoint definitions
   app.get('/exchangePrices', apiController.getExchangePrices);
-  app.get('/priceChart', apiController.getHistoricalPriceChart);
+  app.get('/blockchainChartInfo', apiController.getBlockchainChartInfo);
   app.get('/latestBlock', apiController.getLatestBlock);
   app.get('/unconfirmedTransactions', apiController.getUnconfirmedTransactions);
 

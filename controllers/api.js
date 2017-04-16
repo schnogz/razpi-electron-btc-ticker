@@ -19,10 +19,11 @@ module.exports = {
       }
     });
   },
-  // fetches historical BTC with given timespan
+  // fetches various chart data from blockchain.info for given timespans
+  // example chartTypes ==> 'market-price', 'bip-9-segwit'
   // example timespan's ==> '14d' (14 days), '90d' (90 days), '1y' (1 year), 'all' (all time)
   // example request ==> https://api.blockchain.info/charts/market-price?timespan=1y
-  getHistoricalPriceChart: (req, res) => {
+  getBlockchainChartInfo: (req, res) => {
     stats.getChartData('market-price', { timespan: req.query.timespan, apiCode: apiCode ? apiCode : null })
       .then((resp) => {
         res.send(resp);

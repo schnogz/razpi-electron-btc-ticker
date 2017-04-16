@@ -9,7 +9,7 @@ angular
     $scope.$watch('timePeriod', function (newVal) {
       $scope.isLoading = true;
 
-      $http.get('/priceChart?timespan=' + newVal)
+      $http.get('/blockchainChartInfo?chartType=market-price?timespan=' + newVal)
         .then(function(resp) {
           // convert unix timestamps to JS date objects
           _.each(resp.data, function(point) {
