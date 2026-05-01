@@ -1,5 +1,7 @@
 # Bitcoin Stats Electron App
 
+This repo is no longer maintained!
+
 ## Overview
 An Electron application built specifically for a Raspberry Pi 3 running a 7" display but can be easily modified for 
 other displays and operating systems.  The backend is powered by Node.js v6.9 and Express. The frontend is built using Angular 1.5 and Angular Material.
