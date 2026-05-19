@@ -1,4 +1,4 @@
-# Bitcoin Stats Electron App
+# Bitcoin Price Ticker App
 
 This repo is no longer maintained!
 
